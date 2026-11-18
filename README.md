@@ -31,7 +31,20 @@ AP, NPR, Just Security. All seven stories were verified as 17 November
 ## Entry
 
 `main.ts` (Node 22, stdlib only) copies `entry.png` to
-`/output/entry.png`. The image is 1024×1024, under 1 MiB.
+`/output/entry.png`. The image is 1024×1024, 90,022 bytes (under 1 MiB).
+Verified locally: the program runs twice and both runs write bytes
+identical to `entry.png`.
+
+## Validation
+
+- Local judge (CLIP ViT-B/32 + LAION aesthetic, news prompts): best of
+  5 variants — aesthetic 4.68, relevance 10.00, composition 9.67,
+  total 8.31. The light-paper theme won over the dark theme (8.22) and
+  a Bahrain-hero variant (7.74).
+- Legibility checked at 300 px wide: the date, the hero headline, and
+  all six window headlines stay readable.
+- Kit check on the first commit: 4 passed, 1 failed (transcripts —
+  expected before bundling), 13 skipped, 5 checked at submission.
 
 ## Bounty
 
