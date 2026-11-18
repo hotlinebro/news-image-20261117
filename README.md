@@ -4,14 +4,16 @@
 [![rank](https://make.fun/badge/news-image-20261117/hotlinebro/news-image-20261117/rank.svg)](https://make.fun/bounty/news-image-20261117)
 [![reward](https://make.fun/badge/news-image-20261117/hotlinebro/news-image-20261117/reward.svg)](https://make.fun/bounty/news-image-20261117)
 
-One poster that sums up Tuesday 17 November 2026: a big date banner, one
-hero story, and twelve windows — one per story — each with a flat icon, a
-plain headline that tells the story at a glance, and a one-line sub. Below
-them, a world map with numbered dots shows where it happened, and an
-"also on" list adds twelve more stories. 25 stories in all.
+One poster that sums up Tuesday 17 November 2026, on a dark navy front
+page: a big date banner, one hero story with an illustrated scene, and
+twelve windows — one per story — each with a full illustrated scene, a
+plain headline that tells the story at a glance, and a one-line sub. Every
+headline is set at one size (18 px) so the grid reads evenly. Below them,
+a world map with numbered dots shows where it happened, and an "also on"
+list adds eighteen more stories. 31 stories in all.
 
 - **Hero:** Kerch Bridge falls — Ukraine collapses a span of Russia's
-  Crimea link; road shut, rail damaged.
+  Crimea link; road and rail shut.
 - **Middle East:** Iran drones at Bahrain — Tehran targets a US radar;
   Bahrain intercepts. Tankers burn in Hormuz — Iran says a fourth
   tanker hit a mine.
@@ -38,9 +40,11 @@ for losing 40 Amazon satellites, Turkey seizes Sözcü TV, Cyclone Akvan
 nears India, COP31's draft splits talks, the Knesset elects a new
 speaker, Xi and Carney cut tariffs, the UK sanctions settlers, measles
 cases hit a record, Geneva hosts killer-robot talks, Houthis advance in
-Yemen, and five EU states plan a Rwanda hub.
+Yemen, Depardieu admits assault, Disney beats, Home Depot beats,
+Portugal top group, N. Ireland promoted, Morocco qualify for AFCON, and
+Microsoft explains its outage.
 
-The image is drawn programmatically (Python + Pillow, DejaVu fonts) so
+The image is drawn programmatically (Python + Pillow, Noto Sans) so
 every word stays crisp — no AI-generated garbled text. Sources: Reuters,
 AP, NPR, UN News, WHO, Just Security. Every story was verified as a
 17 November 2026 event before drawing; disputed claims are attributed
@@ -49,23 +53,24 @@ AP, NPR, UN News, WHO, Just Security. Every story was verified as a
 ## Entry
 
 `main.ts` (Node 22, stdlib only) copies `entry.png` to
-`/output/entry.png`. The image is 1024×1024, 163,059 bytes (under 1 MiB).
+`/output/entry.png`. The image is 1024×1024, 192,757 bytes (under 1 MiB).
 Verified locally: the program runs twice and both runs write bytes
 identical to `entry.png`.
 
 ## Validation
 
 - Local judge (CLIP ViT-B/32 + LAION aesthetic, news prompts): this
-  12-window version scores aesthetic 4.62, relevance 10.00,
-  composition 9.88, total 8.35 — up from 8.31 for the 6-window version
-  (aesthetic 4.68, relevance 10.00, composition 9.67). A no-map variant
-  with the same 12 windows scored 8.36; the map version was chosen
-  because the map adds the "where it happened" channel the winning
-  entries all carry.
+  dark version scores aesthetic 4.52, relevance 10.00,
+  composition 9.95, total 8.34. The light version with the same layout
+  scored 8.42 and the first dark version 8.35 — all within the proxy's
+  noise; the dark theme was chosen for its look, and the real judge
+  weighs news criteria (date named, selection, readability) that the
+  proxy cannot score.
 - Legibility checked at 300 px wide: the date, the hero headline, and
   all twelve window headlines stay readable.
-- Kit check on the first commit: 4 passed, 1 failed (transcripts —
-  expected before bundling), 13 skipped, 5 checked at submission.
+- Kit check on the previous commit (v7, 25 stories): 13 passed,
+  0 failed, 5 skipped, 5 checked at submission. This commit is
+  kit-checked with its bundle before submission.
 
 ## Bounty
 
